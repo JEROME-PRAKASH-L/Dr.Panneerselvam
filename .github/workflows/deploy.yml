@@ -1,0 +1,63 @@
+name: Build & deploy portfolio
+
+on:
+  push:
+    branches:
+      - main
+      - claude/portfolio-b-corporate-Ln6Qj
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment, cancelling in-progress runs.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Validate the static site and package it. Runs on every push / PR and
+  # passes without GitHub Pages being enabled, so PR checks stay green.
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate static site
+        run: |
+          test -f index.html
+          test -f data.js
+          test -f assets/portrait.webp
+          node --check data.js
+          echo "Static site validated."
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # The site is a static bundle served from the repository root.
+          path: .
+
+  # Publish to GitHub Pages. Only runs on main — deploying needs Pages to be
+  # enabled on the repo (Settings -> Pages -> Source: GitHub Actions), a
+  # one-time owner action. Gating it here keeps PR checks from going red.
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          # Auto-enable Pages (source = GitHub Actions) if permitted.
+          enablement: true
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

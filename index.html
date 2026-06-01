@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dr. Panneerselvam Ramaswamy — Portfolio</title>
+<meta name="description" content="Dr. Panneerselvam Ramaswamy — 30+ years advancing the MSME sector through quality systems, Lean Six Sigma, and skill development." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz@1,6..72&display=swap" rel="stylesheet" />
+<script src="data.js"></script>
+<style>
+  :root {
+    --navy: #11294A; --navy-2: #1c3a61; --gold: #B88A3E; --gold-2: #caa05a;
+    --paper: #FBFAF7; --paper-2: #F3F0E9; --ink: #1a2436; --muted: #66707f;
+    --line: #e6e1d6; --sans: "Hanken Grotesk", system-ui, sans-serif; --serif: "Newsreader", Georgia, serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 56px; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; color: var(--gold); display: flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--gold); display: inline-block; }
+
+  nav { position: sticky; top: 0; z-index: 50; background: rgba(251,250,247,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+  .brand { display: flex; align-items: center; gap: 13px; text-decoration: none; color: var(--navy); }
+  .brand .dot { width: 38px; height: 38px; border-radius: 50%; background: var(--navy); color: var(--gold-2); display: grid; place-items: center; font-weight: 800; font-size: 15px; letter-spacing: 0.02em; }
+  .brand .bn { font-weight: 700; font-size: 16px; letter-spacing: -0.01em; }
+  .brand .bn small { display: block; font-weight: 500; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 1px; }
+  .navlinks { display: flex; gap: 36px; align-items: center; }
+  .navlinks a { color: var(--ink); text-decoration: none; font-size: 14.5px; font-weight: 500; }
+  .navlinks a:hover { color: var(--gold); }
+  .nav-cta { background: var(--navy); color: #fff !important; padding: 11px 22px; border-radius: 100px; font-size: 13.5px; font-weight: 600; }
+  .nav-cta:hover { background: var(--navy-2); }
+
+  .hero { padding: 70px 0 96px; position: relative; }
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; }
+  .hero h1 { font-size: clamp(46px, 6vw, 82px); font-weight: 800; line-height: 1.0; letter-spacing: -0.035em; color: var(--navy); margin-top: 26px; }
+  .hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--gold); letter-spacing: -0.01em; }
+  .hero .role { margin-top: 26px; font-size: 17px; font-weight: 600; color: var(--navy); }
+  .hero .org { font-size: 15px; color: var(--muted); margin-top: 3px; }
+  .hero .tagline { margin-top: 24px; font-size: 18px; color: var(--muted); max-width: 30em; line-height: 1.6; }
+  .hero .cta { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 9px; font-size: 14.5px; font-weight: 600; padding: 15px 28px; border-radius: 100px; text-decoration: none; transition: all .2s ease; border: 1.5px solid transparent; cursor: pointer; }
+  .btn-primary { background: var(--navy); color: #fff; }
+  .btn-primary:hover { background: var(--navy-2); transform: translateY(-1px); }
+  .btn-out { border-color: var(--line); color: var(--navy); }
+  .btn-out:hover { border-color: var(--navy); }
+
+  .hero-photo { position: relative; }
+  .hero-photo .portrait { width: 100%; aspect-ratio: 4/5; display: block; border-radius: 6px; object-fit: cover; box-shadow: 0 30px 70px -30px rgba(17,41,74,0.4); background: var(--paper-2); }
+  .hero-photo .badge { position: absolute; left: -28px; bottom: 38px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px 24px; box-shadow: 0 18px 40px -18px rgba(17,41,74,0.3); }
+  .hero-photo .badge .b1 { font-size: 30px; font-weight: 800; color: var(--navy); font-family: var(--serif); font-style: italic; }
+  .hero-photo .badge .b2 { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; margin-top: 2px; }
+
+  .stats { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper-2); }
+  .stats .wrap { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+  .stat { padding: 44px 30px; border-left: 1px solid var(--line); }
+  .stat:first-child { border-left: none; padding-left: 0; }
+  .stat .num { font-size: 40px; font-weight: 800; color: var(--navy); line-height: 1; letter-spacing: -0.02em; }
+  .stat .lab { margin-top: 12px; font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+
+  section.block { padding: 120px 0; }
+  .sec-head { max-width: 720px; margin-bottom: 64px; }
+  .sec-head h2 { font-size: clamp(34px, 4vw, 50px); font-weight: 800; letter-spacing: -0.03em; color: var(--navy); margin-top: 16px; line-height: 1.05; }
+  .sec-head p { color: var(--muted); font-size: 17px; margin-top: 16px; }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start; }
+  .about-grid .lead { font-size: 23px; line-height: 1.5; color: var(--navy); font-weight: 500; }
+  .about-grid .body p { color: var(--muted); font-size: 16.5px; }
+  .about-grid .body p + p { margin-top: 18px; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .skill-card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 32px 28px; transition: all .25s ease; }
+  .skill-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 20px 40px -24px rgba(17,41,74,0.25); }
+  .skill-card .n { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--gold); }
+  .skill-card .t { font-size: 18px; font-weight: 700; color: var(--navy); margin-top: 14px; letter-spacing: -0.01em; line-height: 1.3; }
+
+  .experience { background: var(--navy); color: #fff; }
+  .experience .sec-head h2 { color: #fff; }
+  .experience .sec-head p { color: rgba(255,255,255,0.6); }
+  .experience .eyebrow { color: var(--gold-2); }
+  .experience .eyebrow::before { background: var(--gold-2); }
+  .exp-list { display: flex; flex-direction: column; }
+  .exp-row { display: grid; grid-template-columns: 0.5fr 1.5fr; gap: 48px; padding: 44px 0; border-top: 1px solid rgba(255,255,255,0.12); }
+  .exp-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .exp-meta .period { font-size: 17px; font-weight: 700; color: #fff; }
+  .exp-meta .length { font-size: 13px; color: var(--gold-2); margin-top: 6px; font-weight: 600; letter-spacing: 0.04em; }
+  .exp-meta .place { font-size: 13.5px; color: rgba(255,255,255,0.55); margin-top: 8px; }
+  .exp-detail h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+  .exp-detail .org { color: var(--gold-2); font-weight: 600; font-size: 15px; margin-top: 6px; }
+  .exp-detail p { color: rgba(255,255,255,0.68); font-size: 16px; margin-top: 16px; max-width: 46em; }
+  .exp-detail .skills { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+  .exp-detail .skills span { font-size: 12.5px; color: rgba(255,255,255,0.85); border: 1px solid rgba(255,255,255,0.2); padding: 6px 14px; border-radius: 100px; }
+
+  .edu-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; }
+  .edu-card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 36px; display: flex; gap: 22px; }
+  .edu-card .mk { width: 46px; height: 46px; flex: none; border-radius: 12px; background: var(--paper-2); display: grid; place-items: center; color: var(--gold); font-family: var(--serif); font-style: italic; font-size: 20px; font-weight: 600; }
+  .edu-card .period { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 700; min-height: 15px; }
+  .edu-card h3 { font-size: 19px; font-weight: 700; color: var(--navy); margin-top: 8px; letter-spacing: -0.01em; }
+  .edu-card .degree { font-size: 15px; color: var(--muted); margin-top: 6px; }
+  .edu-card .note { font-size: 14px; color: var(--muted); margin-top: 12px; line-height: 1.55; }
+
+  .contact { background: var(--paper-2); }
+  .contact .inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .contact h2 { font-size: clamp(36px,4.4vw,56px); font-weight: 800; letter-spacing: -0.03em; color: var(--navy); line-height: 1.04; }
+  .contact p { color: var(--muted); font-size: 17px; margin-top: 20px; max-width: 30em; }
+  .contact-card { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 14px 32px; }
+  .contact-row { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row .k { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+  .contact-row .v { font-size: 16px; color: var(--navy); font-weight: 600; text-decoration: none; }
+  .contact-row a.v:hover { color: var(--gold); }
+
+  footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 44px 0; }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+  footer .brand-f { font-weight: 700; color: #fff; font-size: 16px; }
+
+  @media (max-width: 920px) {
+    .wrap { padding: 0 26px; }
+    .hero .wrap, .about-grid, .contact .inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-photo { order: -1; max-width: 380px; }
+    .stats .wrap { grid-template-columns: repeat(2,1fr); }
+    .stat { border-left: none !important; padding-left: 0; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .exp-row { grid-template-columns: 1fr; gap: 16px; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .navlinks { display: none; }
+    footer .wrap { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <span class="dot">PR</span>
+        <span class="bn">Dr. P. Ramaswamy<small>MSME · Quality · Skills</small></span>
+      </a>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact" class="nav-cta">Get in touch</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-text">
+        <div class="eyebrow">MSME Development &middot; Quality Systems</div>
+        <h1 id="b-name"></h1>
+        <div class="role" id="b-role"></div>
+        <div class="org" id="b-org"></div>
+        <p class="tagline" id="b-tagline"></p>
+        <div class="cta">
+          <a href="#experience" class="btn btn-primary">Explore career &rarr;</a>
+          <a href="#about" class="btn btn-out">About me</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img class="portrait" src="assets/portrait.webp" alt="Portrait of Dr. Panneerselvam Ramaswamy" />
+        <div class="badge">
+          <div class="b1">30+ yrs</div>
+          <div class="b2">advancing the MSME sector</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="wrap" id="b-stats"></div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div>
+          <div class="eyebrow">About</div>
+          <p class="lead" id="b-about-lead" style="margin-top:20px;"></p>
+        </div>
+        <div class="body" id="b-about-body"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="expertise" style="background:var(--paper-2);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Capabilities</div>
+        <h2>Areas of expertise</h2>
+        <p>Three decades spanning mechanical engineering, quality systems, and the people side of industrial growth.</p>
+      </div>
+      <div class="skills-grid" id="b-expertise"></div>
+    </div>
+  </section>
+
+  <section class="block experience" id="experience">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Career</div>
+        <h2>A career in MSME development</h2>
+        <p>Four leadership roles across India's premier enterprise-development institutions, 1991&ndash;2021.</p>
+      </div>
+      <div class="exp-list" id="b-experience"></div>
+    </div>
+  </section>
+
+  <section class="block" id="education">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Academia</div>
+        <h2>Education</h2>
+      </div>
+      <div class="edu-grid" id="b-education"></div>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <div class="inner">
+        <div>
+          <div class="eyebrow">Contact</div>
+          <h2 style="margin-top:16px;">Let's build<br />what's next.</h2>
+          <p id="b-contact-blurb"></p>
+        </div>
+        <div class="contact-card" id="b-contact"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span class="brand-f">Dr. Panneerselvam Ramaswamy</span>
+      <span>&copy; 2024 · MSME Development · Quality Systems · Skill Development</span>
+    </div>
+  </footer>
+
+  <script>
+    const D = window.PORTFOLIO;
+    document.getElementById('b-name').innerHTML = 'Dr. Panneerselvam <em>Ramaswamy</em>';
+    document.getElementById('b-role').textContent = D.role;
+    document.getElementById('b-org').textContent = D.org;
+    document.getElementById('b-tagline').textContent = D.tagline;
+
+    document.getElementById('b-stats').innerHTML = D.stats.map(s =>
+      `<div class="stat"><div class="num">${s.num}</div><div class="lab">${s.label}</div></div>`).join('');
+
+    document.getElementById('b-about-lead').textContent = D.about[0];
+    document.getElementById('b-about-body').innerHTML = '<p>' + D.about[1] + '</p>' +
+      '<p>Across every posting, the through-line has been the same: turn engineering rigour into outcomes enterprises can feel — cleaner processes, sharper skills, stronger businesses.</p>';
+
+    document.getElementById('b-expertise').innerHTML = D.expertise.map((e,i) =>
+      `<div class="skill-card"><div class="n">0${i+1}</div><div class="t">${e}</div></div>`).join('');
+
+    document.getElementById('b-experience').innerHTML = D.experience.map(x =>
+      `<div class="exp-row">
+        <div class="exp-meta">
+          <div class="period">${x.period}</div>
+          <div class="length">${x.length}</div>
+          <div class="place">${x.place}</div>
+        </div>
+        <div class="exp-detail">
+          <h3>${x.role}</h3>
+          <div class="org">${x.org}</div>
+          <p>${x.desc}</p>
+          <div class="skills">${x.skills.map(s=>`<span>${s}</span>`).join('')}</div>
+        </div>
+      </div>`).join('');
+
+    document.getElementById('b-education').innerHTML = D.education.map(e =>
+      `<div class="edu-card">
+        <div class="mk">${e.school.charAt(0)}</div>
+        <div>
+          <div class="period">${e.period || '&nbsp;'}</div>
+          <h3>${e.school}</h3>
+          <div class="degree">${e.degree}</div>
+          ${e.note ? `<div class="note">${e.note}</div>` : ''}
+        </div>
+      </div>`).join('');
+
+    document.getElementById('b-contact-blurb').textContent =
+      'Open to advisory, mentoring, and speaking on MSME development, quality systems, and skill development. Based in ' + D.contact.location + '.';
+    document.getElementById('b-contact').innerHTML = [
+      ['Email', D.contact.email, 'mailto:' + D.contact.email],
+      ['LinkedIn', D.contact.linkedin, 'https://' + D.contact.linkedin.replace(/^https?:\/\//, '')],
+      ['Location', D.contact.location, null],
+    ].map(([k,v,href]) => `<div class="contact-row"><span class="k">${k}</span>${
+      href ? `<a class="v" href="${href}"${k==='LinkedIn' ? ' target="_blank" rel="noopener"' : ''}>${v}</a>` : `<span class="v">${v}</span>`
+    }</div>`).join('');
+  </script>
+</body>
+</html>

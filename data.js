@@ -1,0 +1,98 @@
+// Shared content for Dr. Panneerselvam Ramaswamy portfolio
+window.PORTFOLIO = {
+  name: "Dr. Panneerselvam Ramaswamy",
+  shortName: "P. Ramaswamy",
+  monogram: "PR",
+  role: "Principal Director & General Manager (Retd.)",
+  org: "MSME Technology Centre · Indo-German Tool Room",
+  location: "Welwyn Garden City, England, United Kingdom",
+  tagline:
+    "Transforming micro, small & medium enterprises through quality systems, skill development, and operational excellence.",
+  expertise: [
+    "Mechanical Engineering",
+    "Quality Systems — ISO QMS / EMS / OH&S",
+    "Lean Six Sigma",
+    "Skill Development & Curriculum Design",
+    "Entrepreneurship, Startups & Incubation",
+    "Foundry · Data Analytics",
+  ],
+  stats: [
+    { num: "30+", label: "Years advancing the MSME sector" },
+    { num: "1991\u20132021", label: "Career in public-sector industry development" },
+    { num: "D.Sc.", label: "Doctor of Science, MSME" },
+    { num: "Zero", label: "Defects \u00b7 a Lean Six Sigma philosophy" },
+  ],
+  about: [
+    "As Principal Director & General Manager at the MSME Technology Centre, my leadership pivoted on strategic planning and quality-systems implementation to transform micro, small, and medium enterprises. My focus on ISO standards and Lean Six Sigma has been instrumental in driving process improvements and operational excellence.",
+    "Our team's commitment to Zero Defects and Waste Elimination not only elevated the Centre's performance but contributed significantly to the industry's growth. With a comprehensive approach to training and auditing, we fostered an environment where continuous learning and innovation thrive \u2014 ultimately enhancing our value to clients and stakeholders.",
+  ],
+  experience: [
+    {
+      role: "Principal Director & General Manager I/C",
+      org: "MSME Technology Centre, Agra (UP) \u00b7 Indo-German Tool Room, Indore",
+      period: "Aug 2013 \u2014 Oct 2021",
+      length: "8 yrs 3 mos",
+      place: "Greater Agra Area \u00b7 On-site",
+      desc: "Led and managed mechanical engineering and training programs across the Centre and Tool Room, directing strategy, quality systems, and capability building.",
+      skills: ["Coaching", "Curriculum Design", "+64 skills"],
+    },
+    {
+      role: "Deputy Director",
+      org: "Micro, Small & Medium Enterprises \u2014 Development Institute",
+      period: "Jun 2006 \u2014 Aug 2013",
+      length: "7 yrs 3 mos",
+      place: "Greater Chennai Area",
+      desc: "Coordinated mechanical engineering programs and projects, ensuring curriculum quality and the delivery of skill-development initiatives for enterprises.",
+      skills: ["Teaching", "Training", "+48 skills"],
+    },
+    {
+      role: "Deputy Director",
+      org: "MSME Development Institute",
+      period: "Aug 2003 \u2014 May 2006",
+      length: "2 yrs 10 mos",
+      place: "Agartala Area, India",
+      desc: "Developed and implemented strategic plans aligned with organizational goals, strengthening regional enterprise support and institutional capacity.",
+      skills: ["Coaching", "Microsoft Excel", "+42 skills"],
+    },
+    {
+      role: "Assistant Director",
+      org: "MSME Development Institute (formerly Small Industries Service Institute)",
+      period: "1991 \u2014 2003",
+      length: "12 yrs",
+      place: "Greater Coimbatore Area",
+      desc: "Coordinated mechanical engineering and enterprise-development programs across key result areas, building the foundation of a three-decade career in MSME development.",
+      skills: ["Coaching", "Training", "+37 skills"],
+    },
+  ],
+  education: [
+    {
+      school: "Sanskriti University",
+      degree: "Doctor of Science (D.Sc.), Micro, Small & Medium Enterprises",
+      period: "2015 \u2014 2021",
+      note: "Research on the promotion of skill development and technology support for the MSME sector.",
+    },
+    {
+      school: "SRM Institute of Science & Technology, Chennai",
+      degree: "Master of Technology (M.Tech), Mechanical \u2014 CAD",
+      period: "",
+      note: "",
+    },
+    {
+      school: "Government College of Technology, Coimbatore",
+      degree: "Bachelor of Engineering (B.E.), Mechanical Engineering",
+      period: "",
+      note: "",
+    },
+    {
+      school: "Government Higher Secondary School, Kaniyambadi",
+      degree: "Secondary School Leaving Certificate, Mathematics",
+      period: "1967 \u2014 1974",
+      note: "",
+    },
+  ],
+  contact: {
+    email: "paselvam@gmail.com",
+    linkedin: "linkedin.com/in/panneerselvam-ramaswamy",
+    location: "Welwyn Garden City, England, UK",
+  },
+};
