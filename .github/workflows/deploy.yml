@@ -1,25 +1,25 @@
-name: Deploy portfolio to GitHub Pages
+name: Validate portfolio
+
+# The site is published via GitHub Pages "Deploy from a branch" (Settings ->
+# Pages -> Source: Deploy from a branch -> main / root), which serves the
+# static files at the repo root directly. The Actions GITHUB_TOKEN cannot
+# create a Pages site on first use ("Resource not accessible by integration"),
+# so enabling Pages is a one-time manual step in repo Settings. This workflow
+# only validates the site.
 
 on:
   push:
     branches:
       - main
+      - claude/portfolio-b-corporate-Ln6Qj
+  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,18 +32,3 @@ jobs:
           test -f assets/portrait.webp
           node --check data.js
           echo "Static site validated."
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          # Auto-enable Pages with source = GitHub Actions on first run.
-          enablement: true
-
-      - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
